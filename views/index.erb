@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kickball and Junk</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/app.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/flexbox.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+</head>
+<body>
+
+  <br></br>
+  <h1 id="intro">Kickball and Junk</h1>
+  <h4 id="intro">responsive site</h4>
+  <br></br>
+
+  <h2 id="intro">Teams</h2>
+  <div class="flexbox">
+    <% @team.each do |team_name| %>
+    <% @team_hash = team_name %>
+    <div class="col">
+      <ul><a href="/team/<%= team_name %>"><%= team_name %></a></ul>
+    </div>
+    <% end %>
+  </div>
+
+
+
+  <br></br>
+  <h2 id="intro">Posistions</h2>
+
+  <div class="flexbox">
+    <% @roster[@team_hash].each do |position, player| %>
+      <div class="col">
+        <ul><a href="/position/<%= position %>"><%= position %></td></ul>
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+
+
+</body>
+</html>

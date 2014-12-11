@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="/css/app.css" media="screen" rel="stylesheet" />
+  <title><%= params[:team] %></title>
+</head>
+<body>
+  <div class="main">
+
+
+    <table class="tg">
+
+      <tr>
+        <br></br>
+        <th class="tg-hgcj" colspan="2"><%= params[:team] %></th>
+
+      </tr>
+
+    <% team_roster = @roster[params[:team]] %>
+    <% team_roster.each do |position, player| %>
+    <tr>
+      <th class="tg-s6z2"><%= position %></th>
+      <td class="tg-s6z2"><%= player %></td>
+    </tr>
+    <% end %>
+
+    </table>
+
+  <br></br>
+  <a href="/">Back</a>
+  </div>
+</body>
+</html>
